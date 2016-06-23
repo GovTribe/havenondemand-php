@@ -20,7 +20,7 @@ class HODErrorObj
     public $detail = "";
     public $jobID = "";
 
-    function HODErrorObj($code, $reason, $detail="", $jobID="") {
+    public function __construct($code, $reason, $detail="", $jobID="") {
         $this->error = $code;
         $this->reason = $reason;
         $this->detail = $detail;
@@ -50,7 +50,7 @@ class HODClient
     private $errorList = array();
 
 
-    function HODClient($apiKey, $version = "v1") {
+    public function __construct($apiKey, $version = "v1") {
         $this->apiKey = $apiKey;
         $this->ver = "/".$version;
     }
